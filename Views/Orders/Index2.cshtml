@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Henk5.Models.Category>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+        @foreach (var category in Model)
+        {
+            <h2>@category.Name</h2>
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+                @foreach (var item in category.Items)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                            @Html.DisplayFor(modelItem => item.Price)
+                            <a asp-action="AddItemToOrder" asp-route-Id="@item.Id">Voeg toe</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+
+
+        

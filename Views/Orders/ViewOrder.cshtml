@@ -1,0 +1,16 @@
+﻿@model Henk5.Models.Order
+@{
+    ViewData["Title"] = "ViewOrder";
+}
+
+    @foreach (var Item in Model.Items)
+        {
+            <table>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Item.Name)
+
+                    </td>
+                </tr>
+            </table>
+        }
